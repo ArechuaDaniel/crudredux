@@ -2,17 +2,21 @@ import {useEffect} from 'react'
 import Producto from './Producto';
 // Redux
 import {useSelector, useDispatch} from 'react-redux'
-import {obtenerProductosAction} from '../actions/productosActions';
+import {obtenerProductosAction} from '../actions/productoAction';
+
 const Productos = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     // Consultar la api
     const cargarProductos = () => dispatch(obtenerProductosAction());
 
     cargarProductos();
   }, [])
+
   // obtener el state
   const productos = useSelector(state => state.productos.productos);
+  console.log(productos);
   const error = useSelector(state => state.productos.error);
   const cargando = useSelector(state => state.productos.loading);
   return (
@@ -29,7 +33,8 @@ const Productos = () => {
           </tr>
         </thead>
         <tbody>
-          {productos.length === 0 ? 'No hay productos' : (
+          {productos.length === 0 ? 'No hay productos' : 
+            (
             productos.map(producto => (
               <Producto
                 key = {producto.id}
