@@ -3,7 +3,7 @@
     {
       "id": 2,
       "nombre": "Jugo de Naranja",
-      "precio": "1"
+      "precio": "2"
     },
     {
       "nombre": "Jugo de Naranja",
@@ -22,7 +22,7 @@
     },
     {
       "nombre": "Cuaderno",
-      "precio": 2,
+      "precio": "1",
       "id": 6
     },
     {
